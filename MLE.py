@@ -149,15 +149,13 @@ class MLE:
 
         return results
     
-    def add_estimator_prefix(self,param_grids):
+    def add_estimator_prefix(self,param_grid):
         prefixed_param_grids = {}
-        for estimator, params in param_grids.items():
-            prefixed_params = {'estimator__' + key: value for key, value in params.items()}
-            prefixed_param_grids[estimator] = prefixed_params
+        temp = "estimator__"
+        prefixed_param_grids = {temp + str(key): val for key, val in param_grid.items()}
         return prefixed_param_grids
     
     def estimator_validate(self, scaler_name, estimator_name, params={}):
-        print(scaler_name, estimator_name, params, flush=True)
         scaler = self.scalers[scaler_name]
         estimator = self.classifiers[estimator_name]
         
@@ -166,6 +164,9 @@ class MLE:
         verbose = 0
         if params == {}:
             params = self.add_estimator_prefix(param_grids[estimator_name])
+
+        print(scaler_name, estimator_name, params, flush=True)
+        start = time.time()
         
         # Numeric features scaler
         numeric_transformer = Pipeline(steps=[('scaler', scaler)])
@@ -199,6 +200,8 @@ class MLE:
             'accuracy_scores': acc_scores,
         }
 
+        end = time.time()
+        print(f"Time elapsed: {end - start}s")
         return results, cv_scores
 
 param_grids = {
