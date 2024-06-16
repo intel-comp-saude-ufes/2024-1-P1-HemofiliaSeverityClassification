@@ -15,9 +15,11 @@ O arquivo `Development of Machine Learning Models for Hemophilia A Severity Clas
 
 ### 2. Arquivos de Código
 
-- **Hemofilia-Projeto1.ipynb**: Notebook Jupyter que contém o código principal para a geração dos resultados da classificação de severidade de Hemofilia. Este arquivo realiza o treinamento do modelo e a avaliação dos resultados.
+- **Hemofilia-Projeto1.ipynb**: Notebook Jupyter que contém o código principal para a geração dos resultados da classificação de severidade de Hemofilia. Este arquivo realiza o treinamento dos modelos e a avaliação dos resultados.
 
-- **ResultsHemophilia.ipynb**: Notebook Jupyter focado na criação de visualizações dos resultados obtidos e na realização de testes estatísticos. É aqui que os resultados do modelo são analisados de forma mais detalhada.
+- **ResultsHemophilia.ipynb**: Notebook Jupyter focado na criação de visualizações dos resultados obtidos e na realização de testes estatísticos. É aqui que os resultados dos modelos são analisados de forma mais detalhada.
+
+- **MLE.py**: Biblioteca autoral auxiliar para implementar os experimentos.
 
 ## Como Utilizar
 
@@ -31,7 +33,7 @@ Para utilizar este projeto, siga os passos abaixo:
 
 2. Abra os notebooks Jupyter (`*.ipynb`) utilizando o Jupyter Notebook ou o Jupyter Lab.
 
-3. Execute as células de código conforme necessário. Certifique-se de que todas as dependências estão instaladas (verifique o arquivo `requirements.txt` se existir).
+3. Execute as células de código conforme necessário. Certifique-se de que todas as dependências estão instaladas
 
 4. Explore os resultados gerados pelo modelo de classificação e pelas visualizações estatísticas para obter insights sobre a severidade da Hemofilia com base nos dados da proteína FVIII.
 
